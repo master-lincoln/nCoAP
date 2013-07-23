@@ -630,7 +630,7 @@ public abstract class CoapMessage {
         if(payloadLength == 0)
             result +=  "no payload";
         else
-            result += "[PAYLOAD] " + getPayload().toString(0, Math.min(getPayload().readableBytes(), 20),
+            result += "[PAYLOAD] " + getPayload().toString(0, Math.max(payloadLength, 20),
                     Charset.forName("UTF-8")) +  "... ( " + payloadLength + " bytes)";
 
         return result;
